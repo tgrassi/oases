@@ -2,6 +2,7 @@ import pickle
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib
+import os
 from scipy import stats
 from tqdm import tqdm
 from matplotlib.patches import Rectangle
@@ -30,6 +31,11 @@ of CORDEX)
 
 path_save = "/Users/Roberto/Desktop/Varie/Lavoro/Dottorato_Canada/PhD_Project/Figure/FigS3.png"
 path_data = '/Users/Roberto/Desktop/Varie/Lavoro/Dottorato_Canada/PhD_Project/Oasis_paper/data2.pkl'
+
+if not os.path.exists(path_data):
+  path_save = "FigS3.png"
+  path_data = 'data/data2.pkl'
+
 
 with open(path_data, 'rb') as f:
   qus, oases, years, months, models, cordex_ba, cordex_85, cordex_26 = pickle.load(f)

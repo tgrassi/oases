@@ -7,7 +7,7 @@ import pandas as pd
 import os
 import sys
 from matplotlib.ticker import MultipleLocator, FormatStrFormatter, AutoMinorLocator
-from test_word_table import do_table
+#from test_word_table import do_table
 
 
 font = {'family' : 'DejaVu Sans',
@@ -33,6 +33,11 @@ of CORDEX)
 
 path_data = '/Users/Roberto/Desktop/Varie/Lavoro/Dottorato_Canada/PhD_Project/Oasis_paper/data2.pkl'
 path_save = "/Users/Roberto/Desktop/Varie/Lavoro/Dottorato_Canada/PhD_Project/Figure/Fig3.png"
+
+if not os.path.exists(path_data):
+  path_data = 'data/data2.pkl'
+  path_save = "Fig3.png"
+
 path_bootstrap = "bootstrap_results.npy"
 
 if not os.path.isfile(path_bootstrap):
@@ -157,7 +162,7 @@ data_table = [print_table("RCP2.6", "temperature"),
               print_table("RCP2.6", "precipitation"),
               print_table("RCP8.5", "precipitation")]
 
-do_table(data_table, "table_fig3.docx")
+#do_table(data_table, "table_fig3.docx")
 
 # ******************+
 # FIGURES

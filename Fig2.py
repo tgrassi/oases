@@ -22,7 +22,7 @@ if os.path.exists(path_data):
   path_save = '/Users/Roberto/Desktop/Varie/Lavoro/Dottorato_Canada/PhD_Project/Figure/Fig2.png'
 else:
   path_data = "data/newdata.pkl"
-  path_save = "/Users/Roberto/Desktop/Varie/Lavoro/Dottorato_Canada/PhD_Project/Figure/Fig2.png"
+  path_save = "Fig2.png"
 
 
 with open(path_data, 'rb') as f:
